@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shadu — Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#060606;
+  --muted:#9b9b9b;
+  --gold:#d3a84a;
+  --gold2:#c7962e;
+  --accent:linear-gradient(90deg,var(--gold),var(--gold2));
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#ddd;
+  font-family:"Montserrat";
+  overflow-x:hidden;
+  padding-top:80px;
+}
+
+/* NAVBAR */
+.navbar{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  padding:14px 22px;
+  background:rgba(0,0,0,0.35);
+  backdrop-filter:blur(6px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:999;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.nav-left{
+  color:var(--gold);
+  font-weight:800;
+  font-size:20px;
+  letter-spacing:1px;
+}
+.nav-right a{
+  text-decoration:none;
+  margin-left:22px;
+  font-weight:600;
+  color:#ddd;
+  transition:.2s;
+}
+.nav-right a:hover{
+  color:var(--gold);
+}
+
+/* HERO GRID */
+.shadu-section{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:60px;
+  max-width:1100px;
+  margin:auto;
+  align-items:center;
+  min-height:80vh;
+  padding:40px 24px;
+}
+
+/* GOLD GLOW BACKGROUND */
+.hero-glow{
+  position:absolute;
+  top:50%;
+  left:40%;
+  width:650px;
+  height:650px;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle, rgba(211,168,74,0.18), rgba(211,168,74,0.08), transparent 70%);
+  filter:blur(70px);
+  opacity:.45;
+  z-index:-1;
+  animation:glowFloat 7s ease-in-out infinite alternate;
+}
+@keyframes glowFloat{
+  0%{transform:translate(-50%,-48%) scale(1);}
+  100%{transform:translate(-50%,-52%) scale(1.08);}
+}
+
+/* GOLD WAVE */
+.hero-wave{
+  position:absolute;
+  top:70%;
+  left:50%;
+  width:1200px;
+  height:350px;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(ellipse at bottom, rgba(211,168,74,0.15), transparent 70%);
+  opacity:.14;
+  z-index:-1;
+  animation:waveMove 9s ease-in-out infinite alternate;
+}
+@keyframes waveMove{
+  0%{transform:translate(-50%,-48%) scale(1);}
+  100%{transform:translate(-50%,-52%) scale(1.15);}
+}
+
+/* TEXT REVEAL ANIMATION */
+.reveal{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(20px);
+  animation:revealAni 0.9s forwards;
+}
+.reveal:nth-child(2){ animation-delay:0.25s; }
+
+@keyframes revealAni {
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.intro-title{
+  font-size:44px;
+  font-weight:800;
+  letter-spacing:2px;
+  color:#d3a84a;
+}
+.intro-sub{
+  font-size:16px;
+  color:#ddd);
+  margin-top:8px;
+}
+
+/* PROFILE IMAGE */
+.portrait-wrap{
+  width:320px;
+  height:320px;
+  border-radius:50%;
+  overflow:hidden;
+  border:6px solid rgba(211,168,74,0.2);
+  box-shadow:0 18px 60px rgba(0,0,0,0.7);
+}
+.portrait-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* EYEBROW LINE */
+.eyebrow{
+  font-size:15px;
+  color:#ccc;
+  margin-bottom:6px;
+}
+
+/* FOOTER */
+footer{
+  margin:80px 0 20px;
+  text-align:center;
+  color:var(--muted);
+  position:relative;
+}
+footer::before{
+  content:"";
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:70%;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  box-shadow:0 0 12px var(--gold);
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:900px){
+  
+  .navbar{
+    flex-direction:column;
+    gap:6px;
+  }
+  .nav-right{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+  }
+  .nav-right a{margin-left:0;}
+
+  .shadu-section{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding-top:40px;
+  }
+  .portrait-wrap{
+    margin:auto;
+    width:230px;
+    height:230px;
+  }
+  .intro-title{
+    font-size:32px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">SHADU</div>
+  <div class="nav-right">
+    <a href="index.html" style="color:var(--gold)">Home</a>
+    <a href="about.html">About</a>
+    <a href="career.html">Career</a>
+    <a href="projects.html">Projects</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="shadu-section">
+
+  <div class="hero-glow"></div>
+  <div class="hero-wave"></div>
+
+  <div>
+    <div class="eyebrow">Hello! <span style="color:var(--gold)">I'm</span></div>
+
+    <!-- Animated Intro -->
+    <h1 class="intro-title">
+      <span class="reveal">SHADU</span> 
+      <span class="reveal">MOHAMED</span>
+    </h1>
+
+    <p class="intro-sub reveal" style="animation-delay:.5s">
+      “Discipline is not a habit, it's a lifestyle.
+Every small effort adds up silently.
+One day, it becomes your biggest strength"
+    </p>
+  </div>
+
+  <div>
+    <div class="portrait-wrap">
+      <img src="Shadu1.jpg" alt="">
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © <span id="year"></span> Shadu Mohamed
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Career – Shadu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+    /* FIXED FOOTER */
+/* FOOTER */
+footer{
+  margin:80px 0 20px;
+  text-align:center;
+  color:var(--muted);
+  position:relative;
+}
+footer::before{
+  content:"";
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:70%;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  box-shadow:0 0 12px var(--gold);
+}
+
+
+/* ============ MOBILE RESPONSIVE FIXES ============= */
+@media (max-width: 900px){
+
+  .navbar{
+    flex-direction:column;
+    padding:12px 16px;
+    text-align:center;
+  }
+  .nav-right a{
+    margin-left:12px;
+    font-size:14px;
+  }
+
+  .container{
+    padding:80px 18px !important;
+  }
+
+  .timeline::before{
+    left:10px !important;
+  }
+  .timeline.show-line::before{
+    height:100% !important;
+  }
+
+  .entry{
+    margin-left:34px !important;
+  }
+
+  .entry p{
+    text-align:left !important;
+  }
+}
+
+:root{
+  --bg:#060606;
+  --muted:#9b9b9b;
+  --gold:#d3a84a;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#ddd;
+  font-family:"Montserrat";
+  padding-top:80px;
+}
+
+/* NAVBAR */
+.navbar{
+  width:100%;
+  padding:18px 26px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:999;
+}
+.nav-left{
+  font-size:20px;
+  font-weight:700;
+  color:var(--gold);
+}
+.nav-right a{
+  margin-left:20px;
+  color:#ddd;
+  text-decoration:none;
+  font-weight:500;
+  transition:.2s;
+}
+.nav-right a:hover{
+  color:var(--gold);
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+  padding:30px 20px;
+}
+
+/* TITLE */
+.section-title{
+  font-size:30px;
+  color:#fff;
+  border-left:4px solid var(--gold);
+  padding-left:12px;
+  margin-bottom:20px;
+}
+
+/* TIMELINE */
+.timeline{
+  margin-top:25px;
+  position:relative;
+}
+
+/* LINE ANIMATION */
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:20px;
+  width:2px;
+  background:var(--gold);
+  height:0;
+  opacity:0.4;
+  transition:height 1.8s ease;
+}
+.timeline.show-line::before{
+  height:100%;
+}
+
+/* ENTRY CARD */
+.entry{
+  margin-left:50px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:22px;
+  border-radius:12px;
+  backdrop-filter:blur(6px);
+  margin-bottom:20px;
+}
+
+/* PERFECT TEXT ALIGNMENT */
+.entry p{
+  color:var(--muted);
+  line-height:1.7;
+  text-align:justify;
+  font-size:15px;
+  margin-bottom:16px;
+}
+
+.entry h3{
+  color:var(--gold);
+  margin-bottom:8px;
+}
+
+/* FADE ANIMATION */
+.fade{
+  opacity:0;
+  animation:fadeIn .7s forwards;
+}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(10px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* GOLD TEXT */
+.gold-link{
+  color:var(--gold);
+  text-decoration:underline;
+  text-decoration-color:currentColor;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">SHADU</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="career.html" style="color:var(--gold)">Career</a>
+    <a href="projects.html">Projects</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<h1 class="section-title fade">CAREER JOURNEY</h1>
+
+<div class="timeline fade" style="animation-delay:.2s">
+
+  <div class="entry fade" style="animation-delay:.3s">
+   <h3>STEM Facilitator (2024–Present)</h3>
+
+    <p>I began my professional journey in December 2024, taking on the role of a STEM Facilitator at 
+    <span class="gold-link">Ispark Learning Solution Pvt</span>. In this role, I work closely with students at 
+    <span class="gold-link">Equitas Gurukul School</span>, teaching robotics, IoT, electronics, coding, and hands-on project-based STEM concepts. This opportunity helped me understand how students think and how to simplify learning in a practical way.</p>
+
+    <p>As a facilitator, I plan weekly lessons, create project modules, demonstrate sensors and microcontrollers, and help students build real working models. This role strengthened my ability to communicate clearly, explain complex topics in simple ways, and support students during practical sessions.</p>
+
+    <p>Every week I handle multiple projects, guide students during experiments, troubleshoot electronics issues, and help them understand how components interact. These responsibilities improved my leadership, patience, and technical confidence.</p>
+
+    <p>This journey also helped me grow technically—I explored robotics kits, Arduino projects, IoT modules, and coding platforms used in school-level STEM curriculum. Working with students taught me valuable lessons about creativity, problem-solving, and how differently each student approaches learning.</p>
+
+    <p>Looking ahead, I aim to expand my knowledge in advanced IoT, automation, and AI-based educational tools. My future goal is to take on roles like STEM Program Coordinator or Senior Trainer, where I can design large-scale STEM programs and inspire more students.</p>
+
+    <p>Overall, my career from 2024 to now has been shaped by continuous learning, hands-on experience, and the desire to make technology simple, understandable, and enjoyable for students. I look forward to growing further and contributing more to STEM education in the future.</p>
+
+  </div>
+
+</div>
+
+</div>
+
+<!-- SCROLL TRIGGER -->
+<script>
+const timeline = document.querySelector('.timeline');
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      timeline.classList.add('show-line');
+    }
+  });
+},{ threshold: 0.3 });
+
+observer.observe(timeline);
+</script>
+<footer>
+  © <span id="year"></span> Shadu Mohamed
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

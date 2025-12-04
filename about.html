@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>About – Shadu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* FOOTER */
+footer{
+  margin:80px 0 20px;
+  text-align:center;
+  color:var(--muted);
+  position:relative;
+}
+footer::before{
+  content:"";
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:70%;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  box-shadow:0 0 12px var(--gold);
+}
+
+
+/* ============ MOBILE RESPONSIVE FIXES ============= */
+@media (max-width: 900px){
+  .navbar{
+    flex-direction:column;
+    padding:12px 16px;
+    text-align:center;
+  }
+  .nav-right a{
+    margin-left:12px;
+    font-size:14px;
+  }
+  .container{
+    padding:80px 18px !important;
+  }
+  .page-text p{
+    text-align:left !important;
+  }
+}
+
+:root{
+  --bg:#060606;
+  --muted:#9b9b9b;
+  --gold:#d3a84a;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:#ddd;
+  font-family:"Montserrat";
+  padding-top:80px;
+}
+
+/* NAVBAR */
+.navbar{
+  width:100%;
+  padding:18px 26px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  position:fixed; top:0; left:0; z-index:999;
+}
+.nav-left{
+  font-size:20px;
+  font-weight:700;
+  color:var(--gold);
+}
+.nav-right a{
+  margin-left:20px;
+  color:#ddd;
+  text-decoration:none;
+  font-weight:500;
+}
+.nav-right a:hover{
+  color:var(--gold);
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+  padding:30px 20px;
+}
+
+.section-title{
+  font-size:30px;
+  font-weight:700;
+  color:#ffffff;
+  border-left:4px solid var(--gold);
+  padding-left:12px;
+  margin-bottom:20px;
+}
+
+/* GLASS CARD */
+.card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:26px;
+  border-radius:14px;
+  margin-top:20px;
+  backdrop-filter:blur(6px);
+
+  opacity:0;
+  transform:translateY(20px);
+  transition:.6s;
+}
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card h3{
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+/* PERFECT TEXT ALIGNMENT */
+.page-text p{
+  color:var(--muted);
+  line-height:1.7;
+  text-align:justify;
+  font-size:15px;
+  margin-bottom:16px;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .section-title{ text-align:center; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">SHADU</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about.html" style="color:var(--gold)">About</a>
+    <a href="career.html">Career</a>
+    <a href="projects.html">Projects</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <h1 class="section-title">ABOUT ME</h1>
+
+  <div class="card page-text" id="card1">
+    <h3>Who I Am</h3>
+
+    <p>My name is Shadu Mohamed, a Computer Science graduate currently pursuing my Master’s degree. My journey in technology began during my college days, where curiosity slowly turned into passion. From learning my first programming concepts to building small electronic circuits, every experience shaped my interest in creating meaningful projects.</p>
+
+<p>College life played a huge role in shaping the person I am today. I was actively involved in technical events, workshops, and hands-on activities, always trying to learn something beyond the classroom. My time as an NCC cadet helped me build discipline, confidence, and mental strength. It taught me how to lead with clarity, stay calm under pressure, and remain consistent in everything I do.</p>
+
+<p>During my college years, I discovered many things that truly interest me—robotics, IoT, creative building, and exploring how technology solves real problems. I enjoyed experimenting with sensors, motors, and microcontrollers, slowly developing the ability to turn ideas into working models. These experiences helped me find my path toward STEM education and technical training.</p>
+
+<p>Apart from academics, I always enjoyed simple things: travelling to new places, listening to music, riding bikes, and spending time exploring new ideas. I am someone who prefers peaceful environments, deep conversations, and meaningful learning over rushing or competing. I like observing things, understanding people, and improving myself one step at a time.</p>
+
+<p>Today, as a STEM Facilitator, I guide students through robotics, IoT, and creative STEM projects. Teaching young minds has given me patience, clarity, and a strong sense of purpose. Watching my students build confidence through learning is one of my greatest motivations.</p>
+
+<p>I see myself as a calm, reliable, and growth-focused person. I believe in learning every day—whether it’s a technical skill, a life lesson, or a personal improvement. My long-term goal is to grow in IoT, automation, and educational technology, creating solutions that make learning smarter and more accessible for the next generation.</p>
+
+
+  </div>
+
+</div>
+
+<script>
+// Scroll reveal
+const card = document.querySelector("#card1");
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("show");
+    }
+  });
+},{threshold:0.2});
+
+observer.observe(card);
+</script>
+<footer>
+  © <span id="year"></span> Shadu Mohamed
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

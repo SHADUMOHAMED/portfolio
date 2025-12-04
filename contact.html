@@ -1,0 +1,252 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Contact – Shadu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+ /* FOOTER */
+footer{
+  margin:80px 0 20px;
+  text-align:center;
+  color:var(--muted);
+  position:relative;
+}
+footer::before{
+  content:"";
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:70%;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  box-shadow:0 0 12px var(--gold);
+}
+
+    /* ============ MOBILE RESPONSIVE FIXES ============= */
+
+/* MOBILE RESPONSIVE FIXES */
+@media (max-width: 900px){
+
+  /* NAVBAR FIX */
+  .navbar{
+    flex-direction:column;
+    padding:10px 12px;
+    gap:6px;
+  }
+
+  .nav-right{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+  }
+
+  .nav-right a,
+  .resume-btn{
+    margin:0 !important;
+    font-size:13px;
+  }
+
+  /* CONTAINER FIX */
+  .container{
+    padding:100px 16px 40px !important;
+    width:100% !important;
+  }
+
+  /* CONTACT FORM WIDTH FIX */
+  .form-box{
+    padding:16px !important;
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  input, textarea{
+    font-size:14px !important;
+  }
+
+  button{
+    width:100% !important;
+  }
+
+  /* TITLE SIZE FIX */
+  .section-title{
+    font-size:22px !important;
+  }
+}
+
+/* VERY SMALL PHONES (iPhone SE, old mobiles) */
+@media (max-width: 430px){
+  .nav-right a,
+  .resume-btn{
+    font-size:12px !important;
+  }
+
+  .navbar{
+    padding:6px;
+  }
+
+  .container{
+    padding:90px 12px !important;
+  }
+}
+@media (max-width: 900px){
+
+  /* Navbar */
+  .navbar{
+    flex-direction:column;
+    padding:12px 16px;
+    text-align:center;
+  }
+  .nav-right a{
+    margin-left:12px;
+    font-size:14px;
+  }
+  .resume-btn{
+    margin-top:8px;
+  }
+
+  /* Containers */
+  .container{
+    padding:80px 18px !important;
+  }
+
+  /* Profile image (Index page) */
+  .portrait-wrap{
+    width:200px !important;
+    height:200px !important;
+    margin:0 auto !important;
+  }
+
+  /* Index intro grid */
+  .shadu-section{
+    grid-template-columns:1fr !important;
+    text-align:center;
+    gap:20px;
+  }
+
+  /* Timeline (career page) */
+  .timeline::before{
+    left:10px !important;
+  }
+  .entry{
+    margin-left:34px !important;
+  }
+
+  /* Projects grid */
+  .grid{
+    grid-template-columns:1fr !important;
+  }
+
+  /* Forms */
+  input, textarea{
+    font-size:14px;
+  }
+
+  /* Skills grid */
+  .skills-wrap{
+    grid-template-columns:1fr !important;
+  }
+}
+
+:root{--bg:#060606;--muted:#9b9b9b;--gold:#d3a84a;}
+body{margin:0;background:var(--bg);color:#ddd;font-family:"Montserrat";}
+
+/* NAVBAR */
+.navbar{width:100%;padding:18px 26px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.4);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.06);position:fixed;top:0;left:0;z-index:999;}
+.nav-left{font-size:20px;font-weight:700;color:var(--gold);}
+.nav-right a{margin-left:20px;color:#ddd;text-decoration:none;font-weight:500;transition:.2s;}
+.nav-right a:hover{color:var(--gold);}
+body{padding-top:80px;}
+
+.container{max-width:600px;margin:0 auto;padding:30px;}
+
+.section-title{
+  font-size:30px;color:#fff;
+  border-left:4px solid var(--gold);
+  padding-left:12px;
+}
+
+/* Form Glass Box */
+.form-box{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:25px;
+  border-radius:14px;
+  backdrop-filter:blur(6px);
+  margin-top:20px;
+}
+
+input, textarea{
+  width:100%;
+  padding:12px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  color:#fff;
+  margin-top:10px;
+  margin-bottom:18px;
+  border-radius:8px;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:var(--gold);
+  border:none;
+  border-radius:8px;
+  font-weight:700;
+  color:#000;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:0.85;
+}
+
+.fade{opacity:0;animation:fadeIn .7s forwards;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-left">SHADU</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="career.html">Career</a>
+    <a href="projects.html">Projects</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<h1 class="section-title fade">CONTACT ME</h1>
+
+<div class="form-box fade" style="animation-delay:.2s">
+
+  <input type="text" placeholder="Your Name">
+  <input type="email" placeholder="Your Email">
+  <textarea rows="5" placeholder="Your Message"></textarea>
+
+  <button>Send Message</button>
+
+</div>
+
+</div>
+<footer>
+  © <span id="year"></span> Shadu Mohamed
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

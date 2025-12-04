@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Project Gallery – Shadu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#060606;
+  --muted:#9b9b9b;
+  --gold:#d3a84a;
+}
+
+/* BASIC BODY */
+body{
+  margin:0;
+  background:var(--bg);
+  color:#ddd;
+  font-family:"Montserrat";
+  padding-top:80px;
+}
+
+/* NAVBAR */
+.navbar{
+  width:100%;
+  padding:18px 26px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.4);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  position:fixed;
+  top:0; left:0;
+  backdrop-filter:blur(6px);
+  z-index:999;
+}
+.nav-left{
+  color:var(--gold);
+  font-size:20px;
+  font-weight:700;
+}
+.nav-right a{
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:500;
+  color:#ddd;
+}
+.nav-right a:hover{
+  color:var(--gold);
+}
+
+/* CONTAINER */
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:20px;
+}
+
+/* TITLES */
+.section-title{
+  font-size:30px;
+  color:#fff;
+  border-left:4px solid var(--gold);
+  padding-left:12px;
+  margin-bottom:20px;
+}
+
+.sub-title{
+  margin-top:30px;
+  font-size:22px;
+  color:var(--gold);
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+  margin-top:15px;
+}
+
+.grid-item{
+  background:rgba(255,255,255,0.05);
+  padding:12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:.3s;
+  cursor:pointer;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.grid-item img,
+.grid-item video{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+.grid-item:hover{
+  transform:scale(1.04);
+  box-shadow:0 0 20px rgba(211,168,74,0.4);
+}
+
+/* FULLSCREEN VIEWER */
+.viewer{
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.88);
+  backdrop-filter:blur(6px);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+.viewer-content{
+  max-width:90%;
+  max-height:85%;
+}
+.viewer img,
+.viewer video{
+  max-width:100%;
+  max-height:85vh;
+  border-radius:10px;
+}
+.close-viewer{
+  position:absolute;
+  top:20px; right:25px;
+  font-size:32px;
+  color:var(--gold);
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  margin:80px 0 20px;
+  text-align:center;
+  color:var(--muted);
+  position:relative;
+}
+footer::before{
+  content:"";
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:70%;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  box-shadow:0 0 12px var(--gold);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">SHADU</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="galleryprojects.html" style="color:var(--gold)">Project Gallery</a>
+    <a href="gallery.html">Gallery</a>
+  </div>
+</nav>
+
+
+<!-- CONTENT -->
+<div class="container">
+
+<h1 class="section-title">PROJECT GALLERY</h1>
+
+
+<!-- PHOTO SECTION -->
+<h2 class="sub-title">Project Photos</h2>
+<div class="grid">
+
+  <div class="grid-item"><img src="project.jpg"></div>
+  <div class="grid-item"><img src="project1.jpg"></div>
+  <div class="grid-item"><img src="project2.jpg"></div>
+  <div class="grid-item"><img src="project3.jpg"></div>
+  <div class="grid-item"><img src="project4.jpg"></div>
+  <div class="grid-item"><img src="project5.jpg"></div>
+  <div class="grid-item"><img src="project6.jpg"></div>
+  <div class="grid-item"><img src="project7.jpg"></div>
+  <div class="grid-item"><img src="project8.jpg"></div>
+
+</div>
+
+
+<!-- VIDEO SECTION -->
+<h2 class="sub-title">Project Videos</h2>
+<div class="grid">
+
+  <div class="grid-item"><video src="project-video.mp4"></video></div>
+  <div class="grid-item"><video src="project-video1.mp4"></video></div>
+  <div class="grid-item"><video src="project-video2.mp4"></video></div>
+  <div class="grid-item"><video src="project-video3.mp4"></video></div>
+  <div class="grid-item"><video src="project-video4.mp4"></video></div>
+  <div class="grid-item"><video src="project-video5.mp4"></video></div>
+  
+
+</div>
+
+</div>
+
+
+<!-- FULLSCREEN VIEW -->
+<div class="viewer" id="viewer">
+  <span class="close-viewer" onclick="closeViewer()">×</span>
+  <div id="viewerContent" class="viewer-content"></div>
+</div>
+
+<script>
+// OPEN VIEWER
+document.querySelectorAll(".grid-item img, .grid-item video").forEach(item => {
+  item.onclick = () => openViewer(item);
+});
+
+function openViewer(item){
+  const viewer = document.getElementById("viewer");
+  const viewerBox = document.getElementById("viewerContent");
+
+  const clone = item.cloneNode(true);
+  if(clone.tagName === "VIDEO") clone.controls = true;
+
+  viewerBox.innerHTML = "";
+  viewerBox.appendChild(clone);
+  viewer.style.display = "flex";
+}
+
+function closeViewer(){
+  document.getElementById("viewer").style.display = "none";
+}
+</script>
+
+<footer>
+  © <span id="year"></span> Shadu Mohamed
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

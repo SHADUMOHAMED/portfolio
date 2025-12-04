@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Projects – Shadu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* FOOTER */
+footer{
+  margin:80px 0 20px;
+  text-align:center;
+  color:var(--muted);
+  position:relative;
+}
+footer::before{
+  content:"";
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:70%;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  box-shadow:0 0 12px var(--gold);
+}
+:root{
+  --bg:#060606;
+  --muted:#9b9b9b;
+  --gold:#d3a84a;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:#ddd;
+  font-family:"Montserrat";
+  padding-top:80px;
+}
+
+/* NAVBAR */
+.navbar{
+  width:100%;
+  padding:18px 26px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.4);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  position:fixed; top:0; left:0;
+  backdrop-filter:blur(6px);
+  z-index:999;
+}
+.nav-left{
+  font-size:20px;
+  font-weight:700;
+  color:var(--gold);
+}
+.nav-right a{
+  margin-left:20px;
+  color:#ddd;
+  text-decoration:none;
+  font-weight:500;
+}
+.nav-right a:hover{
+  color:var(--gold);
+}
+
+/* CONTENT */
+.container{
+  max-width:900px;
+  margin:0 auto;
+  padding:20px;
+}
+
+.section-title{
+  font-size:30px;
+  color:#fff;
+  border-left:4px solid var(--gold);
+  padding-left:12px;
+  margin-bottom:20px;
+}
+
+/* PROJECT CARDS — With animation */
+.project-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:20px;
+
+  /* Animation start state */
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.6s ease, border-color 0.3s;
+}
+
+/* Visible on scroll */
+.project-card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Hover glow */
+.project-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 22px rgba(211,168,74,0.3);
+  border-color:rgba(211,168,74,0.3);
+}
+
+.project-card h3{
+  color:var(--gold);
+  margin-bottom:6px;
+}
+.project-card p{
+  color:var(--muted);
+  line-height:1.5;
+  margin:0;
+}
+
+/* PROJECT GALLERY BUTTON */
+.gallery-btn{
+  padding:12px 22px;
+  background:var(--gold);
+  color:#000;
+  font-weight:700;
+  border-radius:6px;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:20px;
+}
+.gallery-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 16px rgba(211,168,74,0.5);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">SHADU</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="career.html">Career</a>
+    <a href="projects.html" style="color:var(--gold)">Projects</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<h1 class="section-title">PROJECTS</h1>
+<p class="fade" style="animation-delay:.2s;line-height:1.6;color:var(--muted);">
+Throughout my STEM journey, I have worked on multiple technology-based projects involving Arduino, ESP8266, IoT, Robotics, Sensors, and LEGO systems.
+Each project helped me gain skills in programming, electronics, creativity, and real-world problem solving.
+Below is a list of the major projects I have built, explored, or taught.
+</p>
+
+<!-- PROJECT LIST -->
+
+<div class="project-card">
+  <h3>Temperature-Based Fan Speed Controller</h3>
+  <p>Automatically adjusts fan speed based on temperature readings to improve comfort and save energy.</p>
+</div>
+
+<div class="project-card">
+  <h3>Virtual Home Assistant (IoT)</h3>
+  <p>Controls home appliances remotely using IoT commands to create a smart home environment.</p>
+</div>
+
+<div class="project-card">
+  <h3>WiFi Controlled Robot (ESP8266)</h3>
+  <p>A mobile robot that can be controlled using WiFi with obstacle detection support.</p>
+</div>
+
+<div class="project-card">
+  <h3>Health Monitoring System</h3>
+  <p>Displays heart rate and sensor values using an OLED screen for real-time health monitoring.</p>
+</div>
+
+<div class="project-card">
+  <h3>Smart Blind Glass (IoT Alert)</h3>
+  <p>A wearable obstacle detection device that helps visually impaired users move safely.</p>
+</div>
+
+<div class="project-card">
+  <h3>Chatbot (NodeMCU + OLED)</h3>
+  <p>A small embedded chatbot that responds to predefined questions and displays answers on OLED.</p>
+</div>
+
+<div class="project-card">
+  <h3>Anti-Missile Radar System</h3>
+  <p>Radar simulation using ultrasonic sensors and a servo to detect incoming objects.</p>
+</div>
+
+<div class="project-card">
+  <h3>Smart Missile Detection System</h3>
+  <p>Detects fast-moving objects using LDR/ultrasonic sensors with alert notifications.</p>
+</div>
+
+<div class="project-card">
+  <h3>EquitasBOT (NodeMCU Robot)</h3>
+  <p>An interactive classroom robot designed to make learning fun and engaging for students.</p>
+</div>
+
+<div class="project-card">
+  <h3>Smart Attendance System</h3>
+  <p>Automatically records attendance using sensors and reduces manual work.</p>
+</div>
+
+<div class="project-card">
+  <h3>e-Voting Machine</h3>
+  <p>A digital voting prototype that securely counts votes and displays instant results.</p>
+</div>
+
+<div class="project-card">
+  <h3>Robotic Arm</h3>
+  <p>A servo-controlled robotic arm capable of picking and placing objects.</p>
+</div>
+
+<div class="project-card">
+  <h3>Weather Monitoring System</h3>
+  <p>Monitors temperature and humidity levels and displays them in real time.</p>
+</div>
+
+<div class="project-card">
+  <h3>Gas Leakage Detection System</h3>
+  <p>Uses a gas sensor to detect leakage and immediately triggers an alert.</p>
+</div>
+
+<div class="project-card">
+  <h3>Bluetooth Controlled Car</h3>
+  <p>A car that moves using Bluetooth commands sent from a mobile phone.</p>
+</div>
+
+<div class="project-card">
+  <h3>Arduino Sign Language Trainer</h3>
+  <p>A servo-driven robotic hand that performs sign language gestures for learning.</p>
+</div>
+
+<!-- LEGO PROJECTS -->
+<div class="project-card">
+  <h3>Animal Robot Helper (LEGO)</h3>
+  <p>A LEGO helper robot that performs simple tasks for learning robotics basics.</p>
+</div>
+
+<div class="project-card">
+  <h3>LEGO Race Car</h3>
+  <p>A fast-moving LEGO car designed using gears, motors, and mechanical principles.</p>
+</div>
+
+<div class="project-card">
+  <h3>LEGO Scribbler Robot</h3>
+  <p>A LEGO robot that draws patterns using mounted pens and programmed movement.</p>
+</div>
+
+<!-- PROJECT GALLERY BUTTON -->
+<center><a href="galleryprojects.html" class="gallery-btn">Gallery</a></div></center>
+
+</div>
+
+<!-- SCROLL REVEAL SCRIPT -->
+<script>
+const cards = document.querySelectorAll(".project-card");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observer.observe(card));
+</script>
+<footer>
+  © <span id="year"></span> Shadu Mohamed
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
